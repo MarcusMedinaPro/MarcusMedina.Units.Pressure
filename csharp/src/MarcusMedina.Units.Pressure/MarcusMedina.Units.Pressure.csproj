@@ -6,12 +6,13 @@
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <PackageId>MarcusMedina.Units.Pressure</PackageId>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <Title>MarcusMedina.Units.Pressure</Title>
     <Description>Fluent pressure unit conversion — Pascal, bar, PSI, atm, Torr and more.</Description>
     <Authors>Marcus Medina</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/MarcusMedinaPro/MarcusMedina.Units.Pressure/wiki</PackageProjectUrl>
     <RepositoryUrl>https://github.com/MarcusMedinaPro/MarcusMedina.Units.Pressure</RepositoryUrl>
     <PackageTags>pressure;units;conversion;fluent;pascal;bar;psi;atm</PackageTags>
     <NoWarn>CS1573;CS1591</NoWarn>
