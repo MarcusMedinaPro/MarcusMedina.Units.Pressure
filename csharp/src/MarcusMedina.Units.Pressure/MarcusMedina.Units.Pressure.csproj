@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <PackageId>MarcusMedina.Units.Pressure</PackageId>
-    <Version>0.1.1</Version>
+    <Version>0.1.2</Version>
     <Title>MarcusMedina.Units.Pressure</Title>
     <Description>Fluent pressure unit conversion — Pascal, bar, PSI, atm, Torr and more.</Description>
     <Authors>Marcus Medina</Authors>
