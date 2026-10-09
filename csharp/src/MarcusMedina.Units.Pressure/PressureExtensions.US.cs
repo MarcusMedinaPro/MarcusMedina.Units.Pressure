@@ -9,19 +9,27 @@ namespace MarcusMedina.Units.Pressure.US;
 /// </summary>
 public static class USPressureExtensions
 {
-    /// <summary>1 PSI (pound per square inch) = 6894.757293168 Pa</summary>
-    public static Pressure Psi(this int v) => new(v * 6894.757293168);
-    public static Pressure Psi(this double v) => new(v * 6894.757293168);
+    extension(int v)
+    {
+        /// <summary>1 PSI (pound per square inch) = 6894.757293168 Pa</summary>
+        public Pressure Psi() => new(v * 6894.757293168);
+        /// <summary>1 PSF (pound per square foot) = 47.88025898034 Pa</summary>
+        public Pressure Psf() => new(v * 47.88025898034);
+        /// <summary>1 KSI (kilopound per square inch) = 6 894 757.293 Pa</summary>
+        public Pressure Ksi() => new(v * 6_894_757.293);
+    }
 
-    /// <summary>1 PSF (pound per square foot) = 47.88025898034 Pa</summary>
-    public static Pressure Psf(this int v) => new(v * 47.88025898034);
-    public static Pressure Psf(this double v) => new(v * 47.88025898034);
+    extension(double v)
+    {
+        public Pressure Psi() => new(v * 6894.757293168);
+        public Pressure Psf() => new(v * 47.88025898034);
+        public Pressure Ksi() => new(v * 6_894_757.293);
+    }
 
-    /// <summary>1 KSI (kilopound per square inch) = 6 894 757.293 Pa</summary>
-    public static Pressure Ksi(this int v) => new(v * 6_894_757.293);
-    public static Pressure Ksi(this double v) => new(v * 6_894_757.293);
-
-    public static double ToPsi(this Pressure p) => p.Pascals / 6894.757293168;
-    public static double ToPsf(this Pressure p) => p.Pascals / 47.88025898034;
-    public static double ToKsi(this Pressure p) => p.Pascals / 6_894_757.293;
+    extension(Pressure p)
+    {
+        public double ToPsi() => p.Pascals / 6894.757293168;
+        public double ToPsf() => p.Pascals / 47.88025898034;
+        public double ToKsi() => p.Pascals / 6_894_757.293;
+    }
 }
