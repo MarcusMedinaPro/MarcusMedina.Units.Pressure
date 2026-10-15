@@ -9,39 +9,48 @@ namespace MarcusMedina.Units.Pressure.Metric;
 /// </summary>
 public static class MetricPressureExtensions
 {
-    public static Pressure Micropascals(this int v) => new(v * 0.000001);
-    public static Pressure Micropascals(this double v) => new(v * 0.000001);
-    public static Pressure Millipascals(this int v) => new(v * 0.001);
-    public static Pressure Millipascals(this double v) => new(v * 0.001);
-    public static Pressure Pascals(this int v) => new(v);
-    public static Pressure Pascals(this double v) => new(v);
-    public static Pressure Hectopascals(this int v) => new(v * 100.0);
-    public static Pressure Hectopascals(this double v) => new(v * 100.0);
-    public static Pressure Kilopascals(this int v) => new(v * 1_000.0);
-    public static Pressure Kilopascals(this double v) => new(v * 1_000.0);
-    public static Pressure Megapascals(this int v) => new(v * 1_000_000.0);
-    public static Pressure Megapascals(this double v) => new(v * 1_000_000.0);
-    public static Pressure Gigapascals(this int v) => new(v * 1_000_000_000.0);
-    public static Pressure Gigapascals(this double v) => new(v * 1_000_000_000.0);
+    extension(int v)
+    {
+        public Pressure Micropascals() => new(v * 0.000001);
+        public Pressure Millipascals() => new(v * 0.001);
+        public Pressure Pascals() => new(v);
+        public Pressure Hectopascals() => new(v * 100.0);
+        public Pressure Kilopascals() => new(v * 1_000.0);
+        public Pressure Megapascals() => new(v * 1_000_000.0);
+        public Pressure Gigapascals() => new(v * 1_000_000_000.0);
+        /// <summary>1 bar = 100 000 Pa</summary>
+        public Pressure Bar() => new(v * 100_000.0);
+        /// <summary>1 millibar = 100 Pa</summary>
+        public Pressure Millibar() => new(v * 100.0);
+        /// <summary>1 microbar = 0.1 Pa</summary>
+        public Pressure Microbar() => new(v * 0.1);
+    }
 
-    /// <summary>1 bar = 100 000 Pa</summary>
-    public static Pressure Bar(this int v) => new(v * 100_000.0);
-    public static Pressure Bar(this double v) => new(v * 100_000.0);
-    /// <summary>1 millibar = 100 Pa</summary>
-    public static Pressure Millibar(this int v) => new(v * 100.0);
-    public static Pressure Millibar(this double v) => new(v * 100.0);
-    /// <summary>1 microbar = 0.1 Pa</summary>
-    public static Pressure Microbar(this int v) => new(v * 0.1);
-    public static Pressure Microbar(this double v) => new(v * 0.1);
+    extension(double v)
+    {
+        public Pressure Micropascals() => new(v * 0.000001);
+        public Pressure Millipascals() => new(v * 0.001);
+        public Pressure Pascals() => new(v);
+        public Pressure Hectopascals() => new(v * 100.0);
+        public Pressure Kilopascals() => new(v * 1_000.0);
+        public Pressure Megapascals() => new(v * 1_000_000.0);
+        public Pressure Gigapascals() => new(v * 1_000_000_000.0);
+        public Pressure Bar() => new(v * 100_000.0);
+        public Pressure Millibar() => new(v * 100.0);
+        public Pressure Microbar() => new(v * 0.1);
+    }
 
-    public static double ToMicropascals(this Pressure p) => p.Pascals / 0.000001;
-    public static double ToMillipascals(this Pressure p) => p.Pascals / 0.001;
-    public static double ToPascals(this Pressure p) => p.Pascals;
-    public static double ToHectopascals(this Pressure p) => p.Pascals / 100.0;
-    public static double ToKilopascals(this Pressure p) => p.Pascals / 1_000.0;
-    public static double ToMegapascals(this Pressure p) => p.Pascals / 1_000_000.0;
-    public static double ToGigapascals(this Pressure p) => p.Pascals / 1_000_000_000.0;
-    public static double ToBar(this Pressure p) => p.Pascals / 100_000.0;
-    public static double ToMillibar(this Pressure p) => p.Pascals / 100.0;
-    public static double ToMicrobar(this Pressure p) => p.Pascals / 0.1;
+    extension(Pressure p)
+    {
+        public double ToMicropascals() => p.Pascals / 0.000001;
+        public double ToMillipascals() => p.Pascals / 0.001;
+        public double ToPascals() => p.Pascals;
+        public double ToHectopascals() => p.Pascals / 100.0;
+        public double ToKilopascals() => p.Pascals / 1_000.0;
+        public double ToMegapascals() => p.Pascals / 1_000_000.0;
+        public double ToGigapascals() => p.Pascals / 1_000_000_000.0;
+        public double ToBar() => p.Pascals / 100_000.0;
+        public double ToMillibar() => p.Pascals / 100.0;
+        public double ToMicrobar() => p.Pascals / 0.1;
+    }
 }
